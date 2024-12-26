@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Catalyst Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>The Catalyst Hub</h1>
+        <p>Exploring the intersection of Health, Market, and Quality.</p>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="category-box" id="health">
+                <h2>Health</h2>
+                <p>Explore various health prediction models.</p>
+                <button onclick="openCategory('health')">Explore Health Models</button>
+            </div>
+
+            <div class="category-box" id="market">
+                <h2>Market</h2>
+                <p>Explore market analysis and prediction models.</p>
+                <button onclick="openCategory('market')">Explore Market Models</button>
+            </div>
+
+            <div class="category-box" id="quality">
+                <h2>Quality</h2>
+                <p>Explore quality control and improvement models.</p>
+                <button onclick="openCategory('quality')">Explore Quality Models</button>
+            </div>
+        </div>
+
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button" onclick="closeModal()">&times;</span>
+                <h2 id="modal-title"></h2>
+                <div id="modal-content-area">
+                  </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 The Catalyst Hub</p>
+    </footer>
+
+    <script>
+        function openCategory(category) {
+            const modal = document.getElementById('modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalContent = document.getElementById('modal-content-area');
+
+            modal.style.display = "block";
+
+            switch (category) {
+                case 'health':
+                    modalTitle.textContent = "Health Models";
+                    modalContent.innerHTML = `
+                        <a href="heart_disease.html">Heart Disease Prediction</a><br>
+                        <a href="eye_disease.html">Eye Disease Detection</a><br>
+                        <a href="diabetes_prediction.html">Diabetes Prediction</a><br>
+                        `;
+                    break;
+                case 'market':
+                    modalTitle.textContent = "Market Models";
+                    modalContent.innerHTML = `
+                        <a href="stock_prediction.html">Stock Market Prediction</a><br>
+                        <a href="sales_forecasting.html">Sales Forecasting</a><br>
+                        `;
+                    break;
+                case 'quality':
+                    modalTitle.textContent = "Quality Models";
+                    modalContent.innerHTML = `
+                        <a href="defect_detection.html">Defect Detection</a><br>
+                        <a href="quality_control.html">Quality Control</a><br>
+                        `;
+                    break;
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = "none";
+        }
+
+        // Close the modal if the user clicks outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('modal');
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

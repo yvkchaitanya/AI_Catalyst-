@@ -1,0 +1,132 @@
+/* style.css */
+/* style.css */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color:#333;
+}
+
+header {
+    background-color: #007bff; /* Example color */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around; /* Distribute boxes evenly */
+    flex-wrap: wrap; /* Allow boxes to wrap on smaller screens */
+    max-width: 1200px;
+    margin: 0 auto; /* Center the container */
+}
+
+.category-box {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    width: calc(33% - 20px); /* Adjust width for margins */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    transition: transform 0.2s; /* Add smooth transform on hover */
+}
+.category-box:hover{
+    transform: scale(1.05);
+}
+.category-box h2{
+    color: #007bff;
+}
+.model-output{
+    border:1px solid #ddd;
+    padding:10px;
+    margin:10px 0;
+    border-radius:5px;
+}
+.category-box button{
+    background-color: #007bff;
+    color:white;
+    padding:10px 20px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    transition: background-color 0.3s;
+}
+.category-box button:hover{
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position: relative; /* To prevent overlap with content */
+    bottom: 0;
+    width: 100%;
+}
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .category-box {
+        width: calc(50% - 20px); /* Two boxes per row on medium screens */
+    }
+}
+@media (max-width: 600px) {
+    .category-box {
+        width: calc(100% - 20px); /* One box per row on small screens */
+    }
+}
+/* ... (previous styles) ... */
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black with opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 500px;
+    border-radius: 8px;
+    position: relative;
+}
+.modal-content a{
+    display: block;
+    padding:8px 0;
+    text-decoration: none;
+    color:#007bff;
+}
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
